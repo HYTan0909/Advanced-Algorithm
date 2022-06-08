@@ -21,21 +21,23 @@ def partition(a, first, last):
 
 def mergeSort(a, low, high):
     mid = 0
+
     if(low < high):
-        mid = (low+high)/2
+        mid = int((low+high)/2)
         mergeSort(a, low, mid)
         mergeSort(a, mid+1, high)
-        mergeSort(a, low, high, mid)
+        merge(a, low, high, mid)
 
     return
 
 def merge(a, low, high, mid):
+    temp = [None]*(high - low+1)
     i = low
     k = 0 #keep the index of temp
     j = mid+1
 
     #merge 2 parts into temp
-    while i <= mid and j <= high:
+    while (i <= mid and j <= high):
         if(a[i] < a[j]):
             temp[k] = a[i]
             k += 1
@@ -55,7 +57,7 @@ def merge(a, low, high, mid):
         k += 1
         j += 1
 
-    for i in range(high+1):
+    for i in range(low, high+1):
         a[i] = temp[i-low]
 
 
