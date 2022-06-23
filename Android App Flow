@@ -1,0 +1,13 @@
+lastCheckInTime = system current time
+
+*******User first time check in******
+
+******Start compare last check in time with current time******
+-compare lastCheckInTime with current system time onclick check in button
+	if (currentTime(Date) - lastCheckInTime(String convert to Date obj) = more than 1 day){ 
+		-check in successfully
+		-Connect to database, point +1
+	}
+	else {
+		-display u oredi checked in tdy byebye
+	}
